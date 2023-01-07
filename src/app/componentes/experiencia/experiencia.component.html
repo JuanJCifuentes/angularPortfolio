@@ -1,0 +1,93 @@
+<!-- Experiencia -->
+<section id="seccion-experiencia" class="experiencia seccion-clara">
+    <div class="container text-center">
+        <div class="row">
+            <!-- Estudios -->
+            <div class="columna col-12 col-md-4">
+                <i class="bi bi-journals icono-experiencia"></i>
+                <p class="experiencia-titulo">Estudios</p>
+                <div class="descripcion-experiencia" *ngFor="let estudios of estudio">
+                    <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
+                    <button type="button" class="btn boton-edit" data-bs-toggle="modal"
+                        data-bs-target="#estudiosModal"><i class="bi bi-pencil"></i></button>
+                    <div class="text-center">
+                        <h5>{{estudios.titulo}}</h5>
+                        <h6>-{{estudios.institucion}}</h6>
+                        <h4>{{estudios.inicio}} / {{estudios.fin}}</h4>
+                    </div>
+                    <p>-{{estudios.descripcion}}</p>
+                </div>
+                
+                <div class="badges-contenedor">
+                    <span class="badge text-bg-primary">UNCO</span>
+                    <span class="badge text-bg-primary">Argentina Programa</span>
+                    <span class="badge text-bg-primary">freeCodeCamp</span>
+                    <span class="badge text-bg-primary">EPET 8</span>
+                    <!-- <div>
+                        <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
+                        <button type="button" class="btn boton-edit" data-bs-toggle="modal"
+                            data-bs-target="#estudiosModal"><i class="bi bi-pencil"></i></button>
+                    </div> -->
+                </div>
+            </div>
+            <!-- Experiencia -->
+            <div class="columna col-12 col-md-4">
+                <i class="bi bi-person-workspace icono-experiencia"></i>
+                <p class="experiencia-titulo">Experiencia</p>
+                <div class="descripcion-experiencia" *ngFor="let experiencias of experiencia">
+                    <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
+                    <button type="button" class="btn boton-edit" data-bs-toggle="modal"
+                        data-bs-target="#experienciaModal"><i class="bi bi-pencil"></i></button>
+                    <div class="text-center">
+                        <h5>{{experiencias.sector}}</h5>
+                        <h6>-{{experiencias.institucion}}</h6>
+                        <h4>{{experiencias.inicio}} / {{experiencias.fin}}</h4>
+                    </div>
+                    <p>-{{experiencias.descripcion}}</p>
+                </div>
+                
+                <div class="badges-contenedor">
+                    <span class="badge text-bg-primary">Schlumberger</span>
+                    <span class="badge text-bg-primary">Digan Whisky</span>
+                    <span class="badge text-bg-primary">Onda Verde</span>
+                    <!-- <div>
+                        <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
+                        <button type="button" class="btn boton-edit" data-bs-toggle="modal"
+                            data-bs-target="#experienciaModal"><i class="bi bi-pencil"></i></button>
+                    </div> -->
+                </div>
+            </div>
+            <!-- Desarrollo Web -->
+            <div class="columna col-12 col-md-4">
+                <i class="bi bi-laptop icono-experiencia"></i>
+                <p class="experiencia-titulo">Desarrollo Web</p>
+                <div *ngFor="let desarrolloweb of desarrollo">
+                    <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
+                    <button type="button" class="btn boton-edit" data-bs-toggle="modal"
+                        data-bs-target="#desarrolloModal"><i class="bi bi-pencil"></i></button>
+                    <div class="text-center">
+                        <h5>{{desarrolloweb.sector}}</h5>
+                        <h6>{{desarrolloweb.fecha}}</h6>
+                    </div>
+                    <p>{{desarrolloweb.lenguajes}}</p>
+                </div>
+                
+                <div class="badges-contenedor">
+                    <span class="badge text-bg-primary">BackEnd</span>
+                    <span class="badge text-bg-primary">FrontEnd</span>
+                    <span class="badge text-bg-primary">Frameworks</span>
+                    <span class="badge text-bg-primary">Desarrollo Web</span>
+                    <!-- <div>
+                        <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
+                        <button type="button" class="btn boton-edit" data-bs-toggle="modal"
+                            data-bs-target="#desarrolloModal"><i class="bi bi-pencil"></i></button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-modal-desarrolloweb></app-modal-desarrolloweb>
+<app-modal-estudios></app-modal-estudios>
+<app-modal-experiencia></app-modal-experiencia>

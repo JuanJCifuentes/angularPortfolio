@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* Estilos generales */
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: 'Rubik Dirt', cursive;
+}
+
+.seccion-oscura {
+    color: white;
+    background-color: #1b1b32;
+}
+
+.seccion-clara {
+    color: black;
+    background-color: white;
+}
+
+.seccion-titulo {
+    font-size: 2rem;
+    padding: 15px 0;
+    font-family: 'Rubik Dirt', cursive;
+}
+
+.seccion-descripcion {
+    font-size: 1.2rem;
+    color: #584e4e;
+}
+
+.seccion-texto {
+    font-size: 1.2rem;
+}
+
+.texto-negro {
+    color: black;
+}
+
+.texto-blanco {
+    color: white;
+}
+
+.boton-edit {
+    float: right;
+}
+
+.boton-edit-blanco i {
+    color: white;
+}
+
+

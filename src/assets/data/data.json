@@ -1,0 +1,142 @@
+{
+    "nombre":"Juan Jose",
+    "apellido":"Cifuentes",
+    "imagenPerfil":"../assets/images/gatito.jpg",
+    "titulo":"Desarrollador web Full Stack Jr",
+    "imagenBanner":"../assets/images/desarrolloweb.png",
+    "sobreMi":"Estoy expectante por poder adquirir experiencia y adhentrarme en el mundo laboral de la carrera que elegi y me apasiona, preparado para brindar mis conocimientos al mismo tiempo que me nutro de nuevas experiencias y poder crecer en conjunto. Busco comenzar con mi carrera laboral ya que me entusiasma crecer, aprender y aportar lo mejor de mi en la compañia.",
+
+    "estudios":[
+        {
+            "id":1,
+            "titulo":"Tecnico Electromecanico",
+            "institucion":"E.P.E.T 8",
+            "inicio":"febrero-2010",
+            "fin":"diciembre-2016",
+            "descripcion":"Secundario tecnico realizado en su totalidad y graduado con honores representando a la bandera provincial de Neuquen entre los mejores promedios de la escuela."
+        },
+        {
+            "id":2,
+            "titulo":"Ingenieria Electronica",
+            "institucion":"Universidad Nacional del Comahue",
+            "inicio":"febrero-2017",
+            "fin":"diciembre-2020",
+            "descripcion":"."
+        },
+        {
+            "id":3,
+            "titulo":"Lic. Sistemas de Informacion",
+            "institucion":"Universidad Nacional del Comahue",
+            "inicio":"febrero-2021",
+            "fin":"abril-2022",
+            "descripcion":"."
+        },
+        {
+            "id":4,
+            "titulo":"Desarrollo web Full Stack",
+            "institucion":"Argentina Programa",
+            "inicio":"febrero-2022",
+            "fin":"enero-2023",
+            "descripcion":"."
+        }
+    ],
+
+    "desarrolloweb":[
+        {
+            "id":1,
+            "sector":"BackEnd",
+            "fecha":"2022",
+            "lenguajes":"////// - JAVA - json - MySQL - SQL - Base de Datos Relacionales"
+        },
+        {
+            "id":2,
+            "sector":"FrontEnd",
+            "fecha":"2021",
+            "lenguajes":"HTML - JavaScript - CSS - Bootstrap"
+        },
+        {
+            "id":3,
+            "sector":"Frameworks",
+            "fecha":"2022",
+            "lenguajes":"Angular - SpringBoot - Firebase"
+        }
+    ],
+
+    "experiencias":[
+        {
+            "id":1,
+            "sector":"Fotocabina Servicio para Eventos",
+            "institucion":"Digan Whisky Fotocabina",
+            "inicio":"marzo-2017",
+            "fin":"enero-2020",
+            "descripcion":"Supervicion a cargo y manejo del servicio en los eventos, Atencion al cliente, Sugerencia de contrataciones, Reparacion de Software y Hardware utilizado, etc."
+        },
+        {
+            "id":2,
+            "sector":"Empleado Comercio Local",
+            "institucion":"Minimercado Onda Verde",
+            "inicio":"febrero-2016",
+            "fin":"mayo-2017",
+            "descripcion":"Encargado del local, Atencion al cliente, Recepcion e inspeccion de mercaderia, Limpieza general, Apertura y Cierre del local, etc."
+        },
+        {
+            "id":3,
+            "sector":"Schlumberger Recruiting Process, Tecnico Electromecanico.",
+            "institucion":"Base de Operaciones Schlumberger, Neuquen Capital.",
+            "inicio":"noviembre-2016",
+            "fin":"noviembre-2016",
+            "descripcion":"Proceso de reclutamiento en el campus de Schlumberger, Asistiendo durante 3 dias superando previos procesos de seleccion y distintas evaluaciones de conocimiento. En el campus pudimos aprender principalmente sobre la Empresa y sus distintas bases principales, ademas del manejo del idioma Ingles."
+        }
+    ],
+
+    "habilidades":[
+        {
+            "lenguaje":"HTML",
+            "value":"80"
+        },
+        {
+            "lenguaje":"CSS",
+            "value":"70"
+        },
+        {
+            "lenguaje":"JavaScript",
+            "value":"65"
+        },
+        {
+            "lenguaje":"Bootstrap",
+            "value":"70"
+        },
+        {
+            "lenguaje":"Angular",
+            "value":"75"
+        },
+        {
+            "lenguaje":"MySQL",
+            "value":"60"
+        },
+        {
+            "lenguaje":"JSON",
+            "value":"90"
+        },
+        {
+            "lenguaje":"Ingles - Speak/Listen/Write/Read",
+            "value":"80"
+        },
+        {
+            "lenguaje":"Español - Nativo",
+            "value":"95"
+        },
+        {
+            "lenguaje":"Portugues - Aficionado",
+            "value":"15"
+        }
+    ],
+
+    "proyectos":{
+        "nombre":"Mi Portfolio",
+        "fecha":"2022",
+        "imagenProyecto":"../assets/images/icon.png",
+        "urlProyecto":"#",
+        "urlGithub":"https://github.com/JuanJCifuentes/portfolio-frontEnd"
+    }
+}

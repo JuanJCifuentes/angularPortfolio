@@ -1,0 +1,49 @@
+/* barra de navegacion */
+
+.navbar {
+    padding: 2rem;
+    background-color: white;
+  }
+  
+  .navbar-collapse {
+    align-items: center;
+    justify-content: space-between;  
+  }
+
+.imagen-navbar {
+    filter: invert();
+    width: 80%;
+}
+
+.boton-login {
+    margin-left: 15px;
+}
+
+.iconos-redes-sociales-navbar a {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales-navbar i {
+    color: black;
+    font-size: 1rem;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales-navbar a:hover {
+    background-color: #1b1b32;
+    border: 2px solid rgb(13, 110, 253);
+}
+
+.iconos-redes-sociales-navbar a:hover i {
+    color: white;
+}
+

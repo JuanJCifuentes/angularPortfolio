@@ -4,6 +4,7 @@
     "imagenPerfil":"../assets/images/gatito.jpg",
     "titulo":"Desarrollador web Full Stack Jr",
     "imagenBanner":"../assets/images/desarrolloweb.png",
+    "imagenBanner2":"../assets/images/imagenPrueba2.jpg",
     "sobreMi":"Estoy expectante por poder adquirir experiencia y adhentrarme en el mundo laboral de la carrera que elegi y me apasiona, preparado para brindar mis conocimientos al mismo tiempo que me nutro de nuevas experiencias y poder crecer en conjunto. Busco comenzar con mi carrera laboral ya que me entusiasma crecer, aprender y aportar lo mejor de mi en la compañia.",
 
     "estudios":[
@@ -36,7 +37,7 @@
             "titulo":"Desarrollo web Full Stack",
             "institucion":"Argentina Programa",
             "inicio":"febrero-2022",
-            "fin":"enero-2023",
+            "fin":"marzo-2023",
             "descripcion":"."
         }
     ],

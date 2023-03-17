@@ -48,6 +48,7 @@ export class ModalLoginComponent implements OnInit {
     }else{
       // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
       this.form.markAllAsTouched(); 
+      alert("Por favor, intente de nuevo con datos validos.")
     }
  
   }

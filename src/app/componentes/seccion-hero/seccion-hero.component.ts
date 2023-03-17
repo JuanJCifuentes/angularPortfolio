@@ -14,6 +14,7 @@ export class SeccionHeroComponent implements OnInit {
   title: string= '';
   imgPerfil: any;
   imgBanner:any;
+  imgBanner2:any;
   constructor(private datos:PortfolioService) { }
 
 
@@ -24,6 +25,7 @@ export class SeccionHeroComponent implements OnInit {
       this.title=data.titulo;
       this.imgPerfil=data.imagenPerfil;
       this.imgBanner=data.imagenBanner;
+      this.imgBanner2=data.imagenBanner2;
     })
   }
 

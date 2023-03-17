@@ -12,18 +12,30 @@
                     <div class="mb-3">
                         <label for="tituloEstudios" class="form-label">Titulo</label>
                         <textarea class="form-control" id="tituloEstudios" required></textarea>
+                        <div class="invalid-feedback">
+                            Un Titulo es requerido.
+                          </div>
                     </div>
                     <div class="mb-3">
                         <label for="nombreEstudios" class="form-label">Nombre del establecimiento</label>
                         <textarea class="form-control" id="nombreEstudios" required></textarea>
+                        <div class="invalid-feedback">
+                            El nombre del establecimiento educativo es requerido.
+                          </div>
                     </div>
                     <div class="mb-3">
-                      <label for="fechaInicioEstudios" class="form-label">Fecha de inicio en la que estudio</label>
-                      <textarea class="form-control" id="fechaInicioEstudios" required></textarea>
+                      <label for="fechaInicioEstudios" class="form-label">Fecha de inicio en la que estudio </label>
+                      <input type="date" placeholder="Fecha de inicio" required>
+                      <div class="invalid-feedback">
+                        Por favor inserte una fecha valida.
+                      </div>
                   </div>
                   <div class="mb-3">
                     <label for="fechaFinEstudios" class="form-label">Fecha fin del estudio</label>
-                    <textarea class="form-control" id="fechaFinEstudios" required></textarea>
+                    <input type="date" placeholder="Fecha de inicio" required>
+                      <div class="invalid-feedback">
+                        Por favor inserte una fecha valida.
+                      </div>
                 </div>
                   <div class="mb-3">
                       <label for="infoEstudios" class="form-label">Descripcion de la carrera</label>

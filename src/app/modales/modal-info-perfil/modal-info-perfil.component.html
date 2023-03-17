@@ -10,12 +10,18 @@
   
                 <form class="was-validated">
                     <div class="mb-3">
-                        <label for="tituloPerfil" class="form-label">Titulo</label>
+                        <label for="tituloPerfil" class="form-label">Presentacion</label>
                         <textarea class="form-control" id="tituloPerfil" required></textarea>
+                        <div class="invalid-feedback">
+                            Una presentacion es requerida.
+                          </div>
                     </div>
                     <div class="mb-3">
-                        <label for="infoPerfil" class="form-label">Descripcion</label>
+                        <label for="infoPerfil" class="form-label">Comentario</label>
                         <textarea class="form-control" id="infoPerfil" required></textarea>
+                        <div class="invalid-feedback">
+                            Un comentario es requerido.
+                          </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

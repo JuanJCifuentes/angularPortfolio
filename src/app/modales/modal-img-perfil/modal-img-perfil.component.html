@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
   
-                <form class="was-validated">
+                <form [formGroup]="form" class="was-validated">
                     <div class="mb-3">
                         <label for="imagenPerfil" class="form-label">URL:</label>
                         <input type="url" placeholder="Inserte URL de la imagen" id="imagenPerfil" name="imagenPerfil" required>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -26,6 +26,8 @@ import { ModalEstudiosComponent } from './modales/modal-estudios/modal-estudios.
 import { ModalExperienciaComponent } from './modales/modal-experiencia/modal-experiencia.component';
 import { ModalHabilidadesComponent } from './modales/modal-habilidades/modal-habilidades.component';
 import { ModalProyectosComponent } from './modales/modal-proyectos/modal-proyectos.component';
+import { SPersonaService } from './servicios/s-persona.service';
+import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,7 @@ import { ModalProyectosComponent } from './modales/modal-proyectos/modal-proyect
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [SPersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

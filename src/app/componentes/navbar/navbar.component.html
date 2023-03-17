@@ -28,24 +28,32 @@
             </ul>
         </div>
         <div class="iconos-redes-sociales-navbar d-flex flex-wrap align-items-center justify-content-center">
-            
-                <a href="https://github.com/JuanJCifuentes" target="_blank" rel="noopener noreferrer">
-                    <i class="bi bi-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/juan-j-cifuentes/" target="_blank" rel="noopener noreferrer">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="https://www.instagram.com/jottaac/" target="_blank" rel="noopener noreferrer">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="mailto:cifuentesjuan.nqn@hotmail.com" target="_blank" rel="noopener noreferrer">
-                    <i class="bi bi-envelope"></i>
-                </a>
-            
+
+            <a href="https://github.com/JuanJCifuentes" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/juan-j-cifuentes/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/jottaac/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="mailto:cifuentesjuan.nqn@hotmail.com" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-envelope"></i>
+            </a>
+
         </div>
 
-        <app-login></app-login>
-        <app-logout></app-logout>
+        <div *ngIf="!modoEdit">
+            <button type="button" class="btn btn-success boton-login" routerLink="login">
+                Login
+            </button>
+        </div>
+        <div *ngIf="modoEdit">
+            <button type="button" class="btn btn-success boton-login" (click)="cerrarSesion()">
+                Logout
+            </button>
+        </div>
 
     </div>
 </nav>

@@ -22,6 +22,10 @@
     margin: 20px;
 }
 
+.hero-inferior-imagen {
+    margin-bottom: 20px;
+}
+
 
 @media screen and (min-width: 400px) {
     .hero-inferior-imagen {

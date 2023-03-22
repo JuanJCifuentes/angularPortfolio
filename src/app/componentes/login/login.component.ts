@@ -86,6 +86,7 @@ export class LoginComponent implements OnInit {
       // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
       sessionStorage.setItem('currentUser', 'null'); //cambie el null a string para que compile--> 'null'
       alert("Hay un error en el formulario")
+      this.form.markAllAsTouched();
     }
  
   }

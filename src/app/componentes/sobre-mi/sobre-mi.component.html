@@ -1,11 +1,11 @@
 <!-- Sobre mi -->
-<section id="seccion-sobre-mi" class="sobre-mi seccion-oscura">
+<section id="seccion-sobre-mi" class="sobre-mi seccion-oscura" *ngFor="let persona of persona">
     <div class="contenedor">
-        <button type="button" class="btn boton-edit boton-edit-blanco"><i class="bi bi-x-octagon"></i></button>
-        <button type="button" class="btn boton-edit boton-edit-blanco" data-bs-toggle="modal"
+        <button *ngIf="modoEdit" type="button" class="btn boton-edit boton-edit-blanco"><i class="bi bi-x-octagon"></i></button>
+        <button *ngIf="modoEdit" type="button" class="btn boton-edit boton-edit-blanco" data-bs-toggle="modal"
             data-bs-target="#sobreMiModal"><i class="bi bi-pencil"></i></button>
-        <h2 class="seccion-titulo">Conoce a {{name}} {{lastName}}</h2>
-        <p class="seccion-texto">{{aboutMe}}</p>
+        <h2 class="seccion-titulo">Conoce a {{persona.nombre}} {{persona.apellido}}</h2>
+        <p class="seccion-texto">{{persona.sobreMi}}</p>
     </div>
 </section>
 

@@ -1,5 +1,5 @@
 <!-- Modal imagen de perfil -->
-<div class="modal fade" id="imagenPerfilModal" tabindex="-1" aria-labelledby="imagenPerfilModal" aria-hidden="true">
+<!-- <div class="modal fade" id="imagenPerfilModal" tabindex="-1" aria-labelledby="imagenPerfilModal" aria-hidden="true"> -->
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,16 +8,19 @@
             </div>
             <div class="modal-body">
   
-                <form [formGroup]="form" class="was-validated">
+                <form [formGroup]="form" (ngSubmit)="onEnviar($event)" class="was-validated" >
+                    <input type="hidden" formControlName="id" [ngModel]="persona.id">
                     <div class="mb-3">
                         <label for="imagenPerfil" class="form-label">URL:</label>
-                        <input type="url" placeholder="Inserte URL de la imagen" id="imagenPerfil" name="imagenPerfil" required>
-                        <div class="invalid-feedback">
-                            Por favor inserte una url valida.
+                        <input type="url" formControlName="imagenPerfil"  [(ngModel)]="persona.imagenPerfil" placeholder="Inserte URL de la imagen" [ngClass]="{'is-invalid': Url?.errors && Url?.touched, 'is-valid': !Url?.errors && Url?.touched}" >
+                        <div *ngIf="Url?.errors  && Url?.touched">  
+                            <h6 *ngIf="Url?.hasError('required')" class="error">
+                                Inserte una Url valida.
+                            </h6>
                           </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </form>
@@ -25,4 +28,4 @@
             </div>
         </div>
     </div>
-  </div>
+  <!-- </div> -->

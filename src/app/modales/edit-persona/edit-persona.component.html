@@ -1,0 +1,189 @@
+<!-- Edit imagenPerfil -->
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="imagenPerfilModal">Editar Informacion de la Persona</h1>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <input type="hidden" formControlName="id" [ngModel]="persona.id">
+                <div class="mb-3">
+                    <label for="imagenPerfil" class="form-label">URL Imagen de Perfil:</label>
+                    <input type="url" formControlName="imagenPerfil"  [(ngModel)]="persona.imagenPerfil" placeholder="Inserte URL de la imagen" [ngClass]="{'is-invalid': Url?.errors && Url?.touched, 'is-valid': !Url?.errors && Url?.touched}" >
+                    <div *ngIf="Url?.errors  && Url?.touched">  
+                        <h6 *ngIf="Url?.hasError('required')" class="error">
+                            Inserte una Url valida.
+                        </h6>
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label for="tituloPerfil" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" formControlName="nombre"  [(ngModel)]="persona.nombre" [ngClass]="{'is-invalid': Nombre?.errors && Nombre?.touched, 'is-valid': !Nombre?.errors && Nombre?.touched}">
+                    <div *ngIf="Nombre?.errors  && Nombre?.touched">  
+                        <h6 *ngIf="Nombre?.hasError('required')" class="error">
+                            El nombre es requerido.
+                        </h6>
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label for="tituloPerfil" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" formControlName="apellido"  [(ngModel)]="persona.apellido">
+                    <div *ngIf="Apellido?.errors  && Apellido?.touched">  
+                        <h6 *ngIf="Apellido?.hasError('required')" class="error">
+                            El apellido es requerido.
+                        </h6>
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label for="infoPerfil" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" formControlName="titulo"  [(ngModel)]="persona.titulo">
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="imagenBanner" class="form-label">URL imagen del Banner:</label>
+                    <input type="url" placeholder="Inserte URL de la imagen" formControlName="imagenBanner"  [(ngModel)]="persona.imagenBanner">
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="infoSobreMi" class="form-label">Sobre Mi</label>
+                    <input type="text" class="form-control" formControlName="sobreMi"  [(ngModel)]="persona.sobreMi">
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Email (Recuerde que este dato lo utilizara para el Login)</label>
+                    <input type="email" formControlName="email" class="form-control" [(ngModel)]="persona.email">
+                </div>
+                <!-- Gracias al getter que configuramos en el controlador -->
+                <div *ngIf="Mail?.errors  && Mail?.touched">
+                    <p *ngIf="Mail?.hasError('required')" class="error">
+                        El email es requerido.
+                    </p>
+                    <p *ngIf="Mail?.hasError('email')" class="error">
+                        El formato del email debe ser válido.
+                    </p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Contraseña (Recuerde que este dato lo utilizara para el Login)</label>
+                    <input type="password" formControlName="password" class="form-control" [(ngModel)]="persona.password">
+                </div>
+                <!-- Gracias al getter que configuramos en el controlador -->
+                <div *ngIf="Password?.errors  && Password?.touched">
+                    <p *ngIf="Password?.hasError('required')" class="error">
+                        El password es requerido.
+                    </p>
+                    <p *ngIf="Password?.errors?.['minlength']" class="error">
+                        El password debe ser de 8 o más caracteres.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal info de perfil -->
+<!-- <div class="modal fade" id="infoPerfilModal" tabindex="-1" aria-labelledby="infoPerfilModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="infoPerfilModal">Editar informacion de perfil</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+  
+                <form class="was-validated">
+                    <div class="mb-3">
+                        <label for="tituloPerfil" class="form-label">Presentacion</label>
+                        <textarea class="form-control" id="tituloPerfil" required></textarea>
+                        <div class="invalid-feedback">
+                            Una presentacion es requerida.
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="infoPerfil" class="form-label">Comentario</label>
+                        <textarea class="form-control" id="infoPerfil" required></textarea>
+                        <div class="invalid-feedback">
+                            Un comentario es requerido.
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+  
+            </div>
+        </div>
+    </div>
+  </div> -->
+
+  <!-- Modal banner -->
+<!-- <div class="modal fade" id="imagenBannerModal" tabindex="-1" aria-labelledby="imagenBannerModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="imagenBannerModal">Editar Banner</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+  
+                <form class="was-validated">
+                    <div class="mb-3">
+                        <label for="imagenBanner" class="form-label">URL:</label>
+                        <input type="url" placeholder="Inserte URL de la imagen" id="imagenBanner" name="imagenBanner" required>
+                        <div class="invalid-feedback">
+                            Por favor inserte una url valida.
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+  
+            </div>
+        </div>
+    </div>
+  </div> -->
+
+  <!-- Modal sobre mi -->
+<!-- <div class="modal fade" id="sobreMiModal" tabindex="-1" aria-labelledby="sobreMiModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="sobreMiModal">Editar informacion Sobre Mi</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+  
+                <form class="was-validated">
+                    <div class="mb-3">
+                        <label for="tituloSobreMi" class="form-label">Titulo</label>
+                        <textarea class="form-control" id="tituloSobreMi" required></textarea>
+                        <div class="invalid-feedback">
+                            Un titulo es requerido.
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="infoSobreMi" class="form-label">Sobre Mi</label>
+                        <textarea class="form-control" id="infoSobreMi" required></textarea>
+                        <div class="invalid-feedback">
+                            Una descripcion sobre mi es requerida.
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+  
+            </div>
+        </div>
+    </div>
+  </div> -->

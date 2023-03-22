@@ -1,0 +1,46 @@
+<!-- Modal habilidades -->
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="habilidadesModal">Agregar una nueva Habilidad</h1>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <div class="mb-3">
+                    <label for="nuevaHabilidades" class="form-label">Nueva habilidad</label>
+                    <input type="text" class="form-control" id="nuevaHabilidades" formControlName="habilidad"
+                        [ngClass]="{'is-invalid': Habilidad?.errors && Habilidad?.touched, 'is-valid': !Habilidad?.errors && Habilidad?.touched}"
+                        [(ngModel)]="habilidad">
+                </div>
+                <div *ngIf="Habilidad?.errors  && Habilidad?.touched">
+                    <h6 *ngIf="Habilidad?.hasError('required')" class="error">
+                        La Habilidad es requerida.
+                    </h6>
+                </div>
+                <div class="mb-3">
+                    <label for="valorHabilidades" class="form-label">Valor porcentual de la habilidad</label>
+                    <input type="number" class="form-control" id="valorHabilidades" formControlName="rango"
+                        [(ngModel)]="porcentaje" [ngClass]="{'is-invalid': Rango?.errors && Rango?.touched, 'is-valid': !Rango?.errors && Rango?.touched}" placeholder="(un número del 0 al 100)">
+                </div>
+                <div *ngIf="Rango?.errors  && Rango?.touched">
+                    <h6 *ngIf="Rango?.hasError('required')" class="error">
+                        El porcentaje de conocimiento es requerido.
+                    </h6>
+                    <h6 *ngIf="Rango?.errors?.['min']" class="error">
+                        El número debe ser mayor a 0.
+                    </h6>
+                    <h6 *ngIf="Rango?.errors?.['max']" class="error">
+                        El número debe ser menor o igual a 100.
+                    </h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

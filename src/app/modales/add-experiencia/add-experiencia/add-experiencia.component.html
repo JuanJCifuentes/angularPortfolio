@@ -1,0 +1,56 @@
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="experienciaModal">Agregar nueva Experiencia</h1>
+            </div>
+            <div class="modal-body">
+  
+                <form [formGroup]="form"  (ngSubmit)="onEnviar($event)">
+                    <div class="mb-3">
+                        <label for="sectorExperiencia" class="form-label">Sector de trabajo</label>
+                        <input type="text" class="form-control" id="sectorExperiencia" formControlName="sector" [ngClass]="{'is-invalid': Sector?.errors && Sector?.touched, 'is-valid': !Sector?.errors && Sector?.touched}" [(ngModel)]="sector">
+                        <div *ngIf="Sector?.errors  && Sector?.touched">    
+                            <h6 *ngIf="Sector?.hasError('required')" class="error">
+                                El sector donde trabajo es requerido.
+                            </h6>
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombreExperiencia" class="form-label">Nombre de la empresa</label>
+                        <input type="text" class="form-control" id="nombreExperiencia" formControlName="institucion" [ngClass]="{'is-invalid': Empresa?.errors && Empresa?.touched, 'is-valid': !Empresa?.errors && Empresa?.touched}" [(ngModel)]="institucion"> 
+                        <div *ngIf="Empresa?.errors  && Empresa?.touched">    
+                            <h6 *ngIf="Empresa?.hasError('required')" class="error">
+                                El Nombre de la empresa es requerido.
+                            </h6>
+                          </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="fechaInicioExperiencia" class="form-label">Fecha que entro al trabajo</label>
+                      <input type="text" class="form-control" id="fechaInicioExperiencia" formControlName="primerDia" [ngClass]="{'is-invalid': PrimerDia?.errors && PrimerDia?.touched, 'is-valid': !PrimerDia?.errors && PrimerDia?.touched}" [(ngModel)]="primerDia">
+                      <div *ngIf="PrimerDia?.errors  && PrimerDia?.touched">    
+                        <h6 *ngIf="PrimerDia?.hasError('required')" class="error">
+                            La fecha de ingreso es requerida.
+                        </h6>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="fechaFinExperiencia" class="form-label">Fecha en que finalizo su trabajo</label>
+                    <input type="text" class="form-control" id="fechaFinExperiencia" formControlName="ultimoDia"  [(ngModel)]="ultimoDia">
+                </div>
+                  <div class="mb-3">
+                      <label for="infoExperiencia" class="form-label">Descripcion del puesto</label>
+                      <input type="text" class="form-control" id="infoExperiencia" formControlName="descripcion"  [(ngModel)]="descripcion">
+                  </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+  
+            </div>
+        </div>
+    </div>
+ 
+
+  

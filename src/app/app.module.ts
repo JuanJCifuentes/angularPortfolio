@@ -28,6 +28,12 @@ import { ModalHabilidadesComponent } from './modales/modal-habilidades/modal-hab
 import { ModalProyectosComponent } from './modales/modal-proyectos/modal-proyectos.component';
 import { SPersonaService } from './servicios/s-persona.service';
 import { InterceptorService } from './servicios/interceptor.service';
+import { AddExperienciaComponent } from './modales/add-experiencia/add-experiencia/add-experiencia.component';
+import { EditPersonaComponent } from './modales/edit-persona/edit-persona.component';
+import { AddEstudioComponent } from './modales/add-estudio/add-estudio/add-estudio.component';
+import { AddDesarrolloComponent } from './modales/add-desarrollo/add-desarrollo/add-desarrollo.component';
+import { AddHabilidadComponent } from './modales/add-habilidad/add-habilidad/add-habilidad.component';
+import { AddProyectoComponent } from './modales/add-proyecto/add-proyecto/add-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +57,13 @@ import { InterceptorService } from './servicios/interceptor.service';
     ModalEstudiosComponent,
     ModalExperienciaComponent,
     ModalHabilidadesComponent,
-    ModalProyectosComponent
+    ModalProyectosComponent,
+    AddExperienciaComponent,
+    EditPersonaComponent,
+    AddEstudioComponent,
+    AddDesarrolloComponent,
+    AddHabilidadComponent,
+    AddProyectoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Persona } from 'src/app/entity/persona';
+import { SPersonaService } from 'src/app/servicios/s-persona.service';
 
 @Component({
   selector: 'app-modal-img-perfil',
@@ -9,39 +12,58 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ModalImgPerfilComponent implements OnInit {
 
   form: FormGroup;
-  url: string = '';
-  
-  constructor(private formBuilder: FormBuilder) {
-    this.form=this.formBuilder.group({
-      url:['',[Validators.required]],
+  persona: any;
+
+  constructor(private formBuilder: FormBuilder, private personaService: SPersonaService, private activatedRoute: ActivatedRoute, private router: Router) {
+    this.form = this.formBuilder.group({
+      id: [''],
+      imagenPerfil: ['', [Validators.required]],
     })
-   }
-
-  ngOnInit() {}
-
-  get Url(){
-    return this.form.get("url");
   }
- 
-  get UrlValid(){
+
+  ngOnInit(): void {
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.personaService.getById(id).subscribe(data => {
+      this.persona = data;
+      console.log(data)
+    }, err => {
+      alert("Error al cargar datos");
+      this.router.navigate(['']);
+    }
+    )
+  }
+
+  get Url() {
+    return this.form.get("imagenPerfil");
+  }
+
+  get UrlValid() {
     return this.Url?.touched && !this.Url?.valid;
   }
 
 
-  onEnviar(event: Event){
-    // Detenemos la propagación o ejecución del compotamiento submit de un form
-    event.preventDefault; 
- 
-    if (this.form.valid){
-      // Llamamos a nuestro servicio para enviar los datos al servidor
-      // También podríamos ejecutar alguna lógica extra
-      alert("Todo salio bien ¡Enviar formuario!")
-    }else{
-      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
-      this.form.markAllAsTouched(); 
-      alert("Por favor, intente de nuevo con datos validos.")
+  onUpdate(): void {
+    this.personaService.update(this.form.value).subscribe(data => {
+      // alert("Experiencia modificada.");
+      // console.log(this.form.value);
+      // this.router.navigate(['']);
     }
- 
+    )
+    alert("Imagen modificada");
+    this.router.navigate(['']);
+  }
+
+
+  onEnviar(event: Event) {
+    event.preventDefault;
+
+    if (this.form.valid) {
+      this.onUpdate();
+    } else {
+      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template 
+      alert("No se pudo modificar")
+      this.form.markAllAsTouched();
+    }
   }
 
 

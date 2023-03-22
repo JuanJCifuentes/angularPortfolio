@@ -1,29 +1,47 @@
 <!-- Modal habilidades -->
-<div class="modal fade" id="habilidadesModal" tabindex="-1" aria-labelledby="habilidadesModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="habilidadesModal">Editar informacion sobre las Habilidades</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-  
-                <form class="was-validated">
-                    <div class="mb-3">
-                        <label for="nuevaHabilidades" class="form-label">Nueva habilidad</label>
-                        <textarea class="form-control" id="nuevaHabilidades" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="valorHabilidades" class="form-label">Valor porcentual de la habilidad</label>
-                        <textarea class="form-control" id="valorHabilidades" required></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
-                </form>
-  
-            </div>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="habilidadesModal">Agregar una nueva Habilidad</h1>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <input type="hidden" formControlName="id" [ngModel]="habilidad.id">
+                <div class="mb-3">
+                    <label for="nuevaHabilidades" class="form-label">Nueva habilidad</label>
+                    <input type="text" class="form-control" id="nuevaHabilidades" formControlName="habilidad"
+                        [ngClass]="{'is-invalid': Habilidad?.errors && Habilidad?.touched, 'is-valid': !Habilidad?.errors && Habilidad?.touched}"
+                        [(ngModel)]="habilidad.habilidad">
+                </div>
+                <div *ngIf="Habilidad?.errors  && Habilidad?.touched">
+                    <h6 *ngIf="Habilidad?.hasError('required')" class="error">
+                        La Habilidad es requerida.
+                    </h6>
+                </div>
+                <div class="mb-3">
+                    <label for="valorHabilidades" class="form-label">Valor porcentual de la habilidad</label>
+                    <input type="number" class="form-control" id="valorHabilidades" formControlName="porcentaje"
+                        [(ngModel)]="habilidad.porcentaje" [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.touched, 'is-valid': !Porcentaje?.errors && Porcentaje?.touched}" placeholder="(un número del 0 al 100)">
+                </div>
+                <div *ngIf="Porcentaje?.errors  && Porcentaje?.touched">
+                    <h6 *ngIf="Porcentaje?.hasError('required')" class="error">
+                        El porcentaje de conocimiento es requerido.
+                    </h6>
+                    <h6 *ngIf="Porcentaje?.errors?.['min']" class="error">
+                        El número debe ser mayor a 0.
+                    </h6>
+                    <h6 *ngIf="Porcentaje?.errors?.['max']" class="error">
+                        El número debe ser menor o igual a 100.
+                    </h6>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+
         </div>
     </div>
-  </div>
+</div>

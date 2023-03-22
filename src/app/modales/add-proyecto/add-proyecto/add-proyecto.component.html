@@ -1,0 +1,63 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="proyectosModal">Editar mis Proyectos</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <div class="mb-3">
+                    <label for="nombreProyecto" class="form-label">Nombre del Proyecto</label>
+                    <input type="text" class="form-control" id="nombreProyectos" formControlName="nombreProyecto"
+                        [ngClass]="{'is-invalid': NombreProyecto?.errors && NombreProyecto?.touched, 'is-valid': !NombreProyecto?.errors && NombreProyecto?.touched}"
+                        [(ngModel)]="nombreProyecto">
+                </div>
+                <div *ngIf="NombreProyecto?.errors  && NombreProyecto?.touched">
+                    <h6 *ngIf="NombreProyecto?.hasError('required')" class="error">
+                        El nombre del proyecto es requerido.
+                    </h6>
+                </div>
+                <div class="mb-3">
+                    <label for="fechaProyecto" class="form-label">Año del Proyecto</label>
+                    <input class="form-control" id="fechaProyectos" formControlName="diaRealizado"
+                        [(ngModel)]="diaRealizado">
+                </div>
+                <div class="mb-3">
+                    <label for="imagenProyecto" class="form-label">URL de la imagen:</label>
+                    <input type="url" placeholder="Inserte URL de la imagen" id="imagenProyecto" name="imagenProyecto"
+                        formControlName="imagenProyecto"
+                        [ngClass]="{'is-invalid': ImagenProyecto?.errors && ImagenProyecto?.touched, 'is-valid': !ImagenProyecto?.errors && ImagenProyecto?.touched}"
+                        [(ngModel)]="imagenProyecto">
+                </div>
+                <div *ngIf="ImagenProyecto?.errors  && ImagenProyecto?.touched">
+                    <h6 *ngIf="ImagenProyecto?.hasError('required')" class="error">
+                        Una imagen que represente el proyecto es requerida.
+                    </h6>
+                </div>
+                <div class="mb-3">
+                    <label for="urlGithubProyectos" class="form-label">url GitHub del Proyecto: </label>
+                    <input type="url" placeholder="Inserte URL de GitHub" id="urlGithubProyectos"
+                        formControlName="urlGithub"
+                        [ngClass]="{'is-invalid': UrlGithub?.errors && UrlGithub?.touched, 'is-valid': !UrlGithub?.errors && UrlGithub?.touched}"
+                        [(ngModel)]="urlGithub">
+                </div>
+                <div *ngIf="UrlGithub?.errors  && UrlGithub?.touched">
+                    <h6 *ngIf="UrlGithub?.hasError('required')" class="error">
+                        La url del repositorio del proyecto en github es requerido.
+                    </h6>
+                </div>
+                <div class="mb-3">
+                    <label for="urlProyectos" class="form-label">url Live del Proyecto: </label>
+                    <input type="url" placeholder="Inserte URL del proyecto" id="urlProyectos"
+                        formControlName="urlLive" [(ngModel)]="urlLive">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

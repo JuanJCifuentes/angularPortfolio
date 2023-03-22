@@ -1,28 +1,30 @@
 <!-- Seccion Experiencia -->
-<section id="seccion-experiencia" class="experiencia seccion-clara">
+<section id="seccion-informacion" class="experiencia seccion-clara">
     <div class="container text-center">
         <div class="row">
             <!-- Estudios col-md-4 -->
-            <div class="columna col-12">
+            <div class="columna col-12" id="seccion-estudios">
                 <i class="bi bi-journals icono-experiencia"></i>
                 <p class="experiencia-titulo">Estudios</p>
+                <button *ngIf="modoEdit" type="button" class="btn boton-edit" routerLink="addestudio"><i class="bi bi-plus-circle"></i></button>
                 <div class="descripcion-experiencia" *ngFor="let estudios of estudio">
-                    <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
-                    <button type="button" class="btn boton-edit" data-bs-toggle="modal"
-                        data-bs-target="#estudiosModal"><i class="bi bi-pencil"></i></button>
+                    <div *ngIf="modoEdit">
+                        <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon" (click)="eliminarEducacion(estudios.id)"></i></button>
+                        <button type="button" class="btn boton-edit" routerLink="editestudio/{{estudios.id}}"><i class="bi bi-pencil"></i></button>
+                    </div>
                     <div class="text-center">
-                        <h5>{{estudios.titulo}}</h5>
+                        <h5>{{estudios.title}}</h5>
                         <h6>-{{estudios.institucion}}</h6>
-                        <h4>{{estudios.inicio}} / {{estudios.fin}}</h4>
+                        <h4>{{estudios.primerDia}} / {{estudios.ultimoDia}}</h4>
                     </div>
                     <p>-{{estudios.descripcion}}</p>
                 </div>
-                
-                <div class="badges-contenedor" *ngFor="let estudios of estudio">
-                    <span class="badge text-bg-primary">{{estudios.institucion}}</span>
-                    <!-- <span class="badge text-bg-primary">Argentina Programa</span>
+
+                <div class="badges-contenedor">
+                    <span class="badge text-bg-primary">Universidad Nacional del Comahue</span>
+                    <span class="badge text-bg-primary">Argentina Programa</span>
                     <span class="badge text-bg-primary">freeCodeCamp</span>
-                    <span class="badge text-bg-primary">EPET 8</span> -->
+                    <span class="badge text-bg-primary">EPET 8</span>
                     <!-- <div>
                         <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
                         <button type="button" class="btn boton-edit" data-bs-toggle="modal"
@@ -31,21 +33,23 @@
                 </div>
             </div>
             <!-- Experiencia -->
-            <div class="columna col-12">
+            <div class="columna col-12" id="seccion-experiencia">
                 <i class="bi bi-person-workspace icono-experiencia"></i>
                 <p class="experiencia-titulo">Experiencia</p>
+                <button *ngIf="modoEdit" type="button" class="btn boton-edit" routerLink="addexpe"><i class="bi bi-plus-circle"></i></button>
                 <div class="descripcion-experiencia" *ngFor="let experiencias of experiencia">
-                    <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
-                    <button type="button" class="btn boton-edit" data-bs-toggle="modal"
-                        data-bs-target="#experienciaModal"><i class="bi bi-pencil"></i></button>
+                    <div *ngIf="modoEdit">
+                        <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon" (click)="eliminarExperiencia(experiencias.id)"></i></button>
+                        <button type="button" class="btn boton-edit" routerLink="editexpe/{{experiencias.id}}"><i class="bi bi-pencil"></i></button>
+                    </div>
                     <div class="text-center">
                         <h5>{{experiencias.sector}}</h5>
                         <h6>-{{experiencias.institucion}}</h6>
-                        <h4>{{experiencias.inicio}} / {{experiencias.fin}}</h4>
+                        <h4>{{experiencias.primerDia}} / {{experiencias.ultimoDia}}</h4>
                     </div>
                     <p>-{{experiencias.descripcion}}</p>
                 </div>
-                
+
                 <div class="badges-contenedor">
                     <span class="badge text-bg-primary">Schlumberger</span>
                     <span class="badge text-bg-primary">Digan Whisky</span>
@@ -61,17 +65,19 @@
             <div class="columna col-12">
                 <i class="bi bi-laptop icono-experiencia"></i>
                 <p class="experiencia-titulo">Desarrollo Web</p>
-                <div *ngFor="let desarrolloweb of desarrollo">
-                    <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon"></i></button>
-                    <button type="button" class="btn boton-edit" data-bs-toggle="modal"
-                        data-bs-target="#desarrolloModal"><i class="bi bi-pencil"></i></button>
+                <button *ngIf="modoEdit" type="button" class="btn boton-edit" routerLink="add-desarrollo"><i class="bi bi-plus-circle"></i></button>
+                <div class="descripcion-experiencia" *ngFor="let desarrolloweb of desarrollo">
+                    <div *ngIf="modoEdit">
+                        <button type="button" class="btn boton-edit"><i class="bi bi-x-octagon" (click)="eliminarDesarrollo(desarrolloweb.id)"></i></button>
+                        <button type="button" class="btn boton-edit"><i class="bi bi-pencil" routerLink="edit-desarrollo/{{desarrolloweb.id}}"></i></button>
+                    </div>
                     <div class="text-center">
                         <h5>{{desarrolloweb.sector}}</h5>
-                        <h6>{{desarrolloweb.fecha}}</h6>
+                        <h6>{{desarrolloweb.diaAprendido}}</h6>
                     </div>
-                    <p>{{desarrolloweb.lenguajes}}</p>
+                    <p>{{desarrolloweb.lenguaje}}</p>
                 </div>
-                
+
                 <div class="badges-contenedor">
                     <span class="badge text-bg-primary">BackEnd</span>
                     <span class="badge text-bg-primary">FrontEnd</span>
@@ -88,6 +94,6 @@
     </div>
 </section>
 
-<app-modal-desarrolloweb></app-modal-desarrolloweb>
+<!-- <app-modal-desarrolloweb></app-modal-desarrolloweb>
 <app-modal-estudios></app-modal-estudios>
-<app-modal-experiencia></app-modal-experiencia>
+<app-modal-experiencia></app-modal-experiencia> -->

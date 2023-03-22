@@ -1,27 +1,35 @@
 <!-- Hero -->
-<section id="seccion-hero" class="hero align-items-stretch">
+<section id="seccion-hero" class="hero align-items-stretch" *ngFor="let persona of persona">
     <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
         <div>
-            <img class="hero-imagen-desarrollador" [src]="imgPerfil"
-                alt="Foto de Juan Jose Cifuentes" width="30%" height="30%">
-            <button type="button" class="btn boton-edit" data-bs-toggle="modal" data-bs-target="#imagenPerfilModal"><i
-                    class="bi bi-pencil"></i></button>
+            <img class="hero-imagen-desarrollador" [src]="persona.imagenPerfil" alt="Foto de Juan Jose Cifuentes"
+                width="30%" height="30%">
+            <button *ngIf="modoEdit" type="button" class="btn boton-edit" routerLink="editpersona/{{persona.id}}"><i class="bi bi-pencil"></i></button>
         </div>
         <div>
-            <button type="button" class="btn boton-edit" data-bs-toggle="modal" data-bs-target="#infoPerfilModal"><i
-                    class="bi bi-pencil"></i></button>
-            <h1>Hola, soy {{name}} {{lastName}}</h1>
-            <h2>{{title}}.</h2>
+            <button *ngIf="modoEdit" type="button" class="btn boton-edit" routerLink="editpersona/{{persona.id}}"><i class="bi bi-pencil"></i></button>
+            <h1>Hola, soy {{persona.nombre}} {{persona.apellido}}</h1>
+            <h2>{{persona.titulo}}</h2>
         </div>
     </div>
     <div class="hero-inferior">
-        <img class="hero-inferior-imagen img-fluid" [src]="imgBanner2"
+        <img class="hero-inferior-imagen img-fluid" [src]="persona.imagenBanner"
             alt="Desarrollo web, HTML, CSS, JavaScript">
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#imagenBannerModal"><i
+        <button *ngIf="modoEdit" type="button" class="btn" routerLink="editpersona/{{persona.id}}"><i
                 class="bi bi-pencil"></i></button>
     </div>
 </section>
 
-<app-modal-img-perfil></app-modal-img-perfil>
-<app-modal-info-perfil></app-modal-info-perfil>
-<app-modal-banner></app-modal-banner>
+<!-- Sobre mi -->
+<section id="seccion-sobre-mi" class="sobre-mi seccion-oscura" *ngFor="let persona of persona">
+    <div class="contenedor">
+        <button *ngIf="modoEdit" type="button" class="btn boton-edit boton-edit-blanco" routerLink="editpersona/{{persona.id}}"><i class="bi bi-pencil"></i></button>
+        <h2 class="seccion-titulo">Conoce a {{persona.nombre}} {{persona.apellido}}</h2>
+        <p class="seccion-texto">{{persona.sobreMi}}</p>
+    </div>
+</section>
+
+
+<!-- <app-modal-img-perfil></app-modal-img-perfil> -->
+<!-- <app-modal-info-perfil></app-modal-info-perfil> -->
+<!-- <app-modal-banner></app-modal-banner> -->

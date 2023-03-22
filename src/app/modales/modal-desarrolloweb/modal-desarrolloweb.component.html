@@ -1,33 +1,50 @@
 <!-- Modal desarrollo web -->
-<div class="modal fade" id="desarrolloModal" tabindex="-1" aria-labelledby="desarrolloModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="desarrolloModal">Editar informacion de Desarrollo Web</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-  
-                <form class="was-validated">
-                    <div class="mb-3">
-                        <label for="nombreDesarrollo" class="form-label">Nombre del sector</label>
-                        <textarea class="form-control" id="nombreDesarrollo" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                      <label for="fechaDesarrollo" class="form-label">Fecha</label>
-                      <textarea class="form-control" id="fechaDesarrollo" required></textarea>
-                  </div>
-                  <div class="mb-3">
-                      <label for="infoDesarrollo" class="form-label">Lenguajes del sector</label>
-                      <textarea class="form-control" id="infoDesarrollo" required></textarea>
-                  </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
-                </form>
-  
-            </div>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="desarrolloModal">Editar informacion de Desarrollo Web</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <input type="hidden" formControlName="id" [ngModel]="desarrollo.id">
+                <div class="mb-3">
+                    <label for="nombreDesarrollo" class="form-label">Nombre del sector</label>
+                    <input type="text" class="form-control" id="nombreDesarrollo" formControlName="sector"
+                        [ngClass]="{'is-invalid': Sector?.errors && Sector?.touched, 'is-valid': !Sector?.errors && Sector?.touched}"
+                        [(ngModel)]="desarrollo.sector">
+                </div>
+                <div *ngIf="Sector?.errors  && Sector?.touched">
+                    <h6 *ngIf="Sector?.hasError('required')" class="error">
+                        El Sector de programacion es requerido.
+                    </h6>
+                </div>
+                <div class="mb-3">
+                    <label for="fechaDesarrollo" class="form-label">Fecha</label>
+                    <input type="text" class="form-control" id="fechaDesarrollo" formControlName="diaAprendido"
+                        [(ngModel)]="desarrollo.diaAprendido">
+                </div>
+
+                <div class="mb-3">
+                    <label for="infoDesarrollo" class="form-label">Lenguajes del sector</label>
+                    <input type="text" class="form-control" id="infoDesarrollo" formControlName="lenguaje"
+                        [ngClass]="{'is-invalid': Lenguaje?.errors && Lenguaje?.touched, 'is-valid': !Lenguaje?.errors && Lenguaje?.touched}"
+                        [(ngModel)]="desarrollo.lenguaje">
+                </div>
+                <div *ngIf="Lenguaje?.errors  && Lenguaje?.touched">
+                    <h6 *ngIf="Lenguaje?.hasError('required')" class="error">
+                        El Lenguaje de programacion es requerido.
+                    </h6>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+
         </div>
     </div>
-  </div>
+</div>

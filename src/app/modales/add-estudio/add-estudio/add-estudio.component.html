@@ -1,0 +1,61 @@
+<!-- Modal estudios -->
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="estudiosModal">Agregar nuevo Estudio</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <div class="mb-3">
+                    <label for="tituloEstudios" class="form-label">Titulo</label>
+                    <input class="form-control" id="tituloEstudios" formControlName="title"
+                        [ngClass]="{'is-invalid': Title?.errors && Title?.touched, 'is-valid': !Title?.errors && Title?.touched}"
+                        [(ngModel)]="title">
+                    <div *ngIf="Title?.errors  && Title?.touched">
+                        <h6 *ngIf="Title?.hasError('required')" class="error">
+                            El Titulo de su estudio es requerido.
+                        </h6>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="nombreEstudios" class="form-label">Nombre del establecimiento</label>
+                    <input class="form-control" id="nombreEstudios" formControlName="institucion"
+                        [ngClass]="{'is-invalid': Institucion?.errors && Institucion?.touched, 'is-valid': !Institucion?.errors && Institucion?.touched}"
+                        [(ngModel)]="institucion">
+                    <div *ngIf="Institucion?.errors  && Institucion?.touched">
+                        <h6 *ngIf="Institucion?.hasError('required')" class="error">
+                            El Establecimiento donde estudio es requerido.
+                        </h6>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="fechaInicioEstudios" class="form-label">Fecha de inicio en la que estudio </label>
+                    <input type="text" formControlName="primerDia"
+                        [ngClass]="{'is-invalid': PrimerDia?.errors && PrimerDia?.touched, 'is-valid': !PrimerDia?.errors && PrimerDia?.touched}"
+                        [(ngModel)]="primerDia">
+                    <div *ngIf="PrimerDia?.errors  && PrimerDia?.touched">
+                        <h6 *ngIf="PrimerDia?.hasError('required')" class="error">
+                            La fecha de ingreso es requerida.
+                        </h6>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="fechaFinEstudios" class="form-label">Fecha fin del estudio</label>
+                    <input type="text" formControlName="ultimoDia" [(ngModel)]="ultimoDia">
+                </div>
+                <div class="mb-3">
+                    <label for="infoEstudios" class="form-label">Descripcion de la carrera</label>
+                    <input type="text" class="form-control" id="infoEstudios" formControlName="descripcion" [(ngModel)]="descripcion">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

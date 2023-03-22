@@ -6,38 +6,50 @@ Login
 
 <app-modal-login></app-modal-login> -->
 
-<form [formGroup]="form" (ngSubmit)="onEnviar($event)">
-    <div class="mb-3">
-        <label for="inputEmail" class="form-label">Email</label>
-        <input type="email" formControlName="email" class="form-control" id="inputEmail"
-            aria-describedby="emailHelp">
-    </div>
-    <!-- Gracias al getter que configuramos en el controlador -->
-    <div *ngIf="Mail?.errors  && Mail?.touched">
-        <p *ngIf="Mail?.hasError('required')" class="error">
-            El email es requerido.
-        </p>
-        <p *ngIf="Mail?.hasError('email')" class="error">
-            El formato del email debe ser válido.
-        </p>
-    </div>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
 
-    <div class="mb-3">
-        <label for="inputPassword" class="form-label">Contraseña</label>
-        <input type="password" formControlName="password" class="form-control" id="inputPassword">
-    </div>
-    <!-- Gracias al getter que configuramos en el controlador -->
-    <div *ngIf="Password?.errors  && Password?.touched">
-        <p *ngIf="Password?.hasError('required')" class="error">
-            El password es requerido.
-        </p>
-        <p *ngIf="Password?.errors?.['minlength']" class="error">
-            El password debe ser de 8 o más caracteres.
-        </p>
-    </div>
+            <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" formControlName="email" class="form-control" id="inputEmail"
+                        aria-describedby="emailHelp">
+                </div>
+                <!-- Gracias al getter que configuramos en el controlador -->
+                <div *ngIf="Mail?.errors  && Mail?.touched">
+                    <p *ngIf="Mail?.hasError('required')" class="error">
+                        El email es requerido.
+                    </p>
+                    <p *ngIf="Mail?.hasError('email')" class="error">
+                        El formato del email debe ser válido.
+                    </p>
+                </div>
 
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
-        <button type="submit" class="btn btn-primary">Entrar</button>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Contraseña</label>
+                    <input type="password" formControlName="password" class="form-control" id="inputPassword">
+                </div>
+                <!-- Gracias al getter que configuramos en el controlador -->
+                <div *ngIf="Password?.errors  && Password?.touched">
+                    <p *ngIf="Password?.hasError('required')" class="error">
+                        El password es requerido.
+                    </p>
+                    <p *ngIf="Password?.errors?.['minlength']" class="error">
+                        El password debe ser de 8 o más caracteres.
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+            </form>
+
+        </div>
     </div>
-</form>
+</div>

@@ -2,12 +2,10 @@
 
 <div class="modal-dialog">
     <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="habilidadesModal">Agregar una nueva Habilidad</h1>
-        </div>
         <div class="modal-body">
 
             <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <h1 class="modal-title fs-5 form-titulo" id="habilidadesModal">Editar la Habilidad</h1>
                 <input type="hidden" formControlName="id" [ngModel]="habilidad.id">
                 <div class="mb-3">
                     <label for="nuevaHabilidades" class="form-label">Nueva habilidad</label>
@@ -37,8 +35,8 @@
                     </h6>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" routerLink="/">Volver</button>
+                    <button type="submit">Guardar</button>
                 </div>
             </form>
 

@@ -1,12 +1,8 @@
 <div class="modal-dialog">
     <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="proyectosModal">Editar mis Proyectos</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
         <div class="modal-body">
-
             <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <h1 class="modal-title fs-5 form-titulo" id="proyectosModal">Agregar un Proyecto nuevo</h1>
                 <div class="mb-3">
                     <label for="nombreProyecto" class="form-label">Nombre del Proyecto</label>
                     <input type="text" class="form-control" id="nombreProyectos" formControlName="nombreProyecto"
@@ -53,8 +49,8 @@
                         formControlName="urlLive" [(ngModel)]="urlLive">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" routerLink="/">Volver</button>
+                    <button type="submit">Guardar</button>
                 </div>
             </form>
 

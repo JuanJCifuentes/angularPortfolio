@@ -2,13 +2,10 @@
 
 <div class="modal-dialog">
   <div class="modal-content">
-      <div class="modal-header">
-          <h1 class="modal-title fs-5" id="estudiosModal">Editar informacion de los Estudios</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
       <div class="modal-body">
 
           <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+            <h1 class="modal-title fs-5 form-titulo" id="estudiosModal">Editar informacion de los Estudios</h1>
             <input type="hidden" formControlName="id" [ngModel]="estudio.id">
               <div class="mb-3">
                   <label for="tituloEstudios" class="form-label">Titulo</label>
@@ -52,8 +49,8 @@
                   <input type="text" class="form-control" id="infoEstudios" formControlName="descripcion" [(ngModel)]="estudio.descripcion">
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
-                  <button type="submit" class="btn btn-primary">Guardar</button>
+                  <button type="button" routerLink="/">Volver</button>
+                  <button type="submit">Guardar</button>
               </div>
           </form>
 

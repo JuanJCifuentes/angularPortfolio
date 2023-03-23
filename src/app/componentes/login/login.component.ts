@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
       this.autService.loginPersona(this.form.value).subscribe(data=> {
           //console.log("DATA: " + JSON.stringify(data.id));
           if (data){
-            alert("Acceso correcto");
+            alert("Acceso correcto, sesion iniciada.");
             this.ruta.navigate(['']);
           } else {
             alert("Acceso incorrecto, verifique email y contraseña");

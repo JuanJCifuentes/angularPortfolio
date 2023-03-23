@@ -1,5 +1,6 @@
 <!-- Modal Login -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+
+<!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,9 +14,11 @@
                         <label for="inputEmail" class="form-label">Email</label>
                         <input type="email" formControlName="email" class="form-control" id="inputEmail"
                             aria-describedby="emailHelp">
-                    </div>
+                    </div> -->
+
                     <!-- Gracias al getter que configuramos en el controlador -->
-                    <div *ngIf="Mail?.errors  && Mail?.touched">
+
+                    <!-- <div *ngIf="Mail?.errors  && Mail?.touched">
                         <p *ngIf="Mail?.hasError('required')" class="error">
                             El email es requerido.
                         </p>
@@ -27,9 +30,11 @@
                     <div class="mb-3">
                         <label for="inputPassword" class="form-label">Contraseña</label>
                         <input type="password" formControlName="password" class="form-control" id="inputPassword">
-                    </div>
+                    </div> -->
+
                     <!-- Gracias al getter que configuramos en el controlador -->
-                    <div *ngIf="Password?.errors  && Password?.touched">
+
+                    <!-- <div *ngIf="Password?.errors  && Password?.touched">
                         <p *ngIf="Password?.hasError('required')" class="error">
                             El password es requerido.
                         </p>
@@ -47,4 +52,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

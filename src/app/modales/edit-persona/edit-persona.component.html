@@ -1,12 +1,10 @@
 <!-- Edit imagenPerfil -->
 <div class="modal-dialog">
     <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="imagenPerfilModal">Editar Informacion de la Persona</h1>
-        </div>
         <div class="modal-body">
 
             <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+                <h1 class="modal-title fs-5 form-titulo" id="imagenPerfilModal">Editar Informacion de la Persona</h1>
                 <input type="hidden" formControlName="id" [ngModel]="persona.id">
                 <div class="mb-3">
                     <label for="imagenPerfil" class="form-label">URL Imagen de Perfil:</label>
@@ -78,8 +76,8 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" routerLink="/">Volver</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" routerLink="/">Volver</button>
+                    <button type="submit">Guardar</button>
                 </div>
             </form>
 

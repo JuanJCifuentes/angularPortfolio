@@ -46,7 +46,7 @@ export class NavbarComponent implements OnInit {
   cerrarSesion(){
     sessionStorage.setItem('currentUser', "null");
     this.modoEdit = false;
-    alert("sesión cerrada");
+    alert("Su sesion ha sido cerrada");
     window.location.reload();
     return this.modoEdit;
   }

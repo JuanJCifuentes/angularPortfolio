@@ -1,6 +1,12 @@
 # MiPortfolio
 
+Este Proyecto Integrador se realizó en el marco del curso Yo Programo de Argentina Programa, en el cual se desarrolló un portafolio web que contiene datos personales, estudios cursados, experiencia laboral, conocimientos y habilidades, entre otros.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+
+# Contenido y funcionamiento:
+
+Al acceder al portafolio podrás navegar en él y ver las diferentes secciones entre las que se encuentran: sobre mí, experiencia laboral, educación, habilidades e idiomas y proyectos realizados. También se puede editar el contenido, eliminar o agregar datos, pero esto solamente se podrá hacer accediendo desde el botón login con usuario y contraseña correctos. De esta manera se activarán los botones de edición.
 
 ## Development server
 

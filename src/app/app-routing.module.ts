@@ -19,7 +19,7 @@ import { GuardGuard } from './servicios/guard.guard';
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
-  {path: '**', pathMatch: 'full', component: ErrorComponent},
+
   {path: 'editpersona/:id', component:EditPersonaComponent, canActivate: [GuardGuard]},
   {path: 'editexpe/:id', component:ModalExperienciaComponent, canActivate: [GuardGuard]},
   {path: 'editestudio/:id', component:ModalEstudiosComponent, canActivate: [GuardGuard]},
@@ -31,7 +31,8 @@ const routes: Routes = [
   {path: 'add-desarrollo', component:AddDesarrolloComponent, canActivate: [GuardGuard]},
   {path: 'addhabilidad', component:AddHabilidadComponent, canActivate: [GuardGuard]},
   {path: 'addproyecto', component:AddProyectoComponent, canActivate: [GuardGuard]},
-  {path: 'login', component:LoginComponent}
+  {path: 'login', component:LoginComponent},
+  {path: '**', pathMatch: 'full', component: ErrorComponent},
 ];
  
 @NgModule({

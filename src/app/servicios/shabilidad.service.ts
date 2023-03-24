@@ -7,7 +7,7 @@ import { Habilidad } from '../entity/habilidad';
   providedIn: 'root'
 })
 export class SHabilidadService {
-  url= 'http://localhost:8080/habilidad/'
+  url= 'https://portfolio-backend-qdvf.onrender.com/habilidad/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Habilidad[]>{

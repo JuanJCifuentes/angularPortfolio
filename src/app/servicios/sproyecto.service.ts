@@ -7,7 +7,7 @@ import { Proyecto } from '../entity/proyecto';
   providedIn: 'root'
 })
 export class SProyectoService {
-  url= 'http://localhost:8080/proyecto/'
+  url= 'https://portfolio-backend-qdvf.onrender.com/proyecto/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Proyecto[]>{

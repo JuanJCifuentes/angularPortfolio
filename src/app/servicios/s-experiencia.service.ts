@@ -7,7 +7,7 @@ import { Experiencia } from '../entity/experiencia';
   providedIn: 'root'
 })
 export class SExperienciaService {
-  url= 'http://localhost:8080/experiencia/'
+  url= 'https://portfolio-backend-qdvf.onrender.com/experiencia/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Experiencia[]>{

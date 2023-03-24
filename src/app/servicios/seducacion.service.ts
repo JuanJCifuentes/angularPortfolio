@@ -7,7 +7,7 @@ import { Educacion } from '../entity/educacion';
   providedIn: 'root'
 })
 export class SEducacionService {
-  url= 'http://localhost:8080/estudio/'
+  url= 'https://portfolio-backend-qdvf.onrender.com/estudio/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Educacion[]>{

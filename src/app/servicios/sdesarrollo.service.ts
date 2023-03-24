@@ -7,7 +7,7 @@ import { Desarrollo } from '../entity/desarrollo';
   providedIn: 'root'
 })
 export class SDesarrolloService {
-  url= 'http://localhost:8080/desarrollo/'
+  url= 'https://portfolio-backend-qdvf.onrender.com/desarrollo/'
   constructor(private httpClient:HttpClient) { }
 
   public list(): Observable<Desarrollo[]>{

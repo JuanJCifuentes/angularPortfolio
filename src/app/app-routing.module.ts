@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './componentes/error/error/error.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { AddDesarrolloComponent } from './modales/add-desarrollo/add-desarrollo/add-desarrollo.component';
@@ -18,6 +19,7 @@ import { GuardGuard } from './servicios/guard.guard';
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
+  {path: '**', pathMatch: 'full', component: ErrorComponent},
   {path: 'editpersona/:id', component:EditPersonaComponent, canActivate: [GuardGuard]},
   {path: 'editexpe/:id', component:ModalExperienciaComponent, canActivate: [GuardGuard]},
   {path: 'editestudio/:id', component:ModalEstudiosComponent, canActivate: [GuardGuard]},

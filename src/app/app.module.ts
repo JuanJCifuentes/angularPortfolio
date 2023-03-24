@@ -34,6 +34,7 @@ import { AddEstudioComponent } from './modales/add-estudio/add-estudio/add-estud
 import { AddDesarrolloComponent } from './modales/add-desarrollo/add-desarrollo/add-desarrollo.component';
 import { AddHabilidadComponent } from './modales/add-habilidad/add-habilidad/add-habilidad.component';
 import { AddProyectoComponent } from './modales/add-proyecto/add-proyecto/add-proyecto.component';
+import { ErrorComponent } from './componentes/error/error/error.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { AddProyectoComponent } from './modales/add-proyecto/add-proyecto/add-pr
     AddEstudioComponent,
     AddDesarrolloComponent,
     AddHabilidadComponent,
-    AddProyectoComponent
+    AddProyectoComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
